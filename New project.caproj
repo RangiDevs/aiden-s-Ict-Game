@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
@@ -60,6 +61,9 @@
                 </behavior-type>
                 <behavior-type name="Platform" sid="183328716984141">
                     <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Persist" sid="553550484230775">
+                    <behavior id="Persist" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -113,13 +117,42 @@
             <plugin id="TiledBg" />
             <texture original-source="F:\ICT\Illustrator\background.png" />
         </object-type>
+        <object-type name="Sprite3" sid="430703800188908">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="601698032381413">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386297197975115" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\ICT\Illustrator\creeporanga.png">
+                        <collision-poly>
+                            <point x="0.629187" y="0.23842" />
+                            <point x="0.502392" y="0.110354" />
+                            <point x="0.643541" y="0.0204359" />
+                            <point x="0.849282" y="0" />
+                            <point x="0.980861" y="0.972752" />
+                            <point x="0.763158" y="0.978202" />
+                            <point x="0.869618" y="0.393052" />
+                            <point x="0.354067" y="0.314714" />
+                            <point x="0" y="0.348774" />
+                            <point x="0.0454542" y="0.254768" />
+                            <point x="0.366029" y="0.200272" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>Battle screen.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="0" />

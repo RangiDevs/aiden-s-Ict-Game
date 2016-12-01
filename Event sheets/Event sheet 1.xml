@@ -3,27 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="177485807701914">
-            <conditions>
-                <condition id="2" name="Key is down" sid="213509505918011" type="Keyboard">
-                    <param id="0" name="Key">87 (W)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="426496446305498" type="Sprite">
-                    <param id="0" name="Control">2</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="257011588326119">
             <conditions>
-                <condition id="2" name="Key is down" sid="257209968228134" type="Keyboard">
-                    <param id="0" name="Key">83 (S)</param>
+                <condition id="0" name="On key pressed" sid="701846092722882" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="440283127884975" type="Sprite">
-                    <param id="0" name="Control">3</param>
+                <action behavior="Platform" id="7" name="Simulate control" sid="306211283617832" type="Sprite">
+                    <param id="0" name="Control">2</param>
                 </action>
             </actions>
         </event-block>
@@ -34,8 +22,11 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="669055784844223" type="Sprite">
+                <action behavior="Platform" id="7" name="Simulate control" sid="583925960173910" type="Sprite">
                     <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="647218791773768" type="Sprite">
+                    <param id="0" name="State">0</param>
                 </action>
             </actions>
         </event-block>
@@ -46,9 +37,22 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="8Direction" id="7" name="Simulate control" sid="623341515187071" type="Sprite">
+                <action behavior="Platform" id="7" name="Simulate control" sid="203648850057066" type="Sprite">
                     <param id="0" name="Control">1</param>
                 </action>
+                <action id="7" name="Set mirrored" sid="770674365956800" type="Sprite">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="934802107316383">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="138024660577206" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="673928216727280" type="System" />
             </actions>
         </event-block>
     </events>

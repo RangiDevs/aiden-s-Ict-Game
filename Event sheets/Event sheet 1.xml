@@ -55,5 +55,27 @@
                 <action id="-26" name="Restart layout" sid="673928216727280" type="System" />
             </actions>
         </event-block>
+        <event-block sid="632993591557250">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="548061069568763" type="Sprite">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="952670652243970" type="System">
+                    <param id="0" name="Layout">Battle screen</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="538667828011783">
+            <conditions>
+                <condition id="-18" name="On created" sid="132591941917973" type="Sprite" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="11" name="Set enabled" sid="604180478607478" type="Sprite">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

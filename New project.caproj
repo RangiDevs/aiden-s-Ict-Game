@@ -10,10 +10,14 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
@@ -30,9 +34,9 @@
         <width>854</width>
         <height>480</height>
     </window-size>
-    <pixel-rounding>0</pixel-rounding>
+    <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <use-loader-layout>0</use-loader-layout>
+    <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Enable WebGL">On</prop>
@@ -40,7 +44,7 @@
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Landscape</prop>
-        <prop name="Pause on unfocus">No</prop>
+        <prop name="Pause on unfocus">Yes</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preview browser">(default)</prop>
         <prop name="Sampling">Linear</prop>
@@ -143,6 +147,65 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="playerBattle" sid="323995677703539">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="215685824856690" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="663521134840882" speed="5">
+                    <frame duration="1" hotspotX="0.502146" hotspotY="0.5" original-source="E:\aiden&apos;s game\Animations\Sprite\runningRight\000.png">
+                        <collision-poly>
+                            <point x="0.579399" y="0.5" />
+                            <point x="0.785408" y="0.932249" />
+                            <point x="0.502146" y="0.901084" />
+                            <point x="0.699571" y="0.779133" />
+                            <point x="0.44206" y="0.5" />
+                            <point x="0.124463" y="0.0392954" />
+                            <point x="0.502146" y="0.00135501" />
+                            <point x="0.896996" y="0.0325203" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="baddy" sid="787162445831664">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="172667051557120" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="823706946370974" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\aiden&apos;s game\Animations\Sprite3\Default\000.png">
+                        <collision-poly>
+                            <point x="0.399522" y="0.22752" />
+                            <point x="0.5" y="0.243869" />
+                            <point x="0.906699" y="0.0531335" />
+                            <point x="0.863636" y="0.5" />
+                            <point x="0.992823" y="0.995913" />
+                            <point x="0.5" y="0.309264" />
+                            <point x="0.84689" y="0.517711" />
+                            <point x="0.849282" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerHealth" sid="899206714703354">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="EnemyHealth" sid="946614088073949">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="Text" sid="864666124648879">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextBox" sid="750974981218735">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type global="1" name="Dictionary" sid="618122281628170">
+            <plugin id="Dictionary" />
         </object-type>
     </object-folder>
     <families />

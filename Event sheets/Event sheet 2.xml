@@ -3,13 +3,31 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
     <events>
-        <event-block sid="209456766814104">
+        <variable constant="0" name="Baddy_1_Health" sid="645935831127868" static="0" type="number">2</variable>
+        <variable constant="0" name="PlayerHealth" sid="888143544826897" static="0" type="number">10</variable>
+        <event-block sid="861759285694459">
             <conditions>
-                <condition id="-18" name="On created" sid="931397019852751" type="Sprite" />
+                <condition id="-2" name="On start of layout" sid="225971598297670" type="System" />
             </conditions>
             <actions>
-                <action behavior="Platform" id="11" name="Set enabled" sid="388791782449773" type="Sprite">
-                    <param id="0" name="State">0</param>
+                <action id="4" name="Set maximum" sid="197055876246757" type="EnemyHealth">
+                    <param id="0" name="Maximum">baddy.Health</param>
+                </action>
+                <action id="4" name="Set maximum" sid="248817372651851" type="PlayerHealth">
+                    <param id="0" name="Maximum">playerBattle.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="507668291069013">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="716920581184955" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set progress" sid="920368190132663" type="EnemyHealth">
+                    <param id="0" name="Value">baddy.Health</param>
+                </action>
+                <action id="3" name="Set progress" sid="633567359761845" type="PlayerHealth">
+                    <param id="0" name="Value">playerBattle.Health</param>
                 </action>
             </actions>
         </event-block>

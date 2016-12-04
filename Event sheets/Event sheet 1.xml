@@ -67,15 +67,5 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="538667828011783">
-            <conditions>
-                <condition id="-18" name="On created" sid="132591941917973" type="Sprite" />
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="11" name="Set enabled" sid="604180478607478" type="Sprite">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

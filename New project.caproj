@@ -10,13 +10,14 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
@@ -198,14 +199,20 @@
         <object-type name="EnemyHealth" sid="946614088073949">
             <plugin id="progressbar" />
         </object-type>
-        <object-type name="Text" sid="864666124648879">
+        <object-type name="Health" sid="864666124648879">
             <plugin id="Text" />
         </object-type>
-        <object-type name="TextBox" sid="750974981218735">
+        <object-type name="Answer" sid="750974981218735">
             <plugin id="TextBox" />
         </object-type>
-        <object-type global="1" name="Dictionary" sid="618122281628170">
-            <plugin id="Dictionary" />
+        <object-type name="Function" sid="361465292128686">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Touch" sid="388678472361549">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Txt_time" sid="315522932700547">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
@@ -216,10 +223,17 @@
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Event sheet 3.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="0" />
         <global-instance type="Mouse" uid="2" />
+        <global-instance type="Function" uid="23" />
+        <global-instance type="Touch" uid="25">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />

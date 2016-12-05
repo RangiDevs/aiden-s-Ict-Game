@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 3</name>
+    <events>
+        <variable constant="0" name="RESULT" sid="888315027325006" static="0" type="number">0</variable>
+        <variable constant="0" name="NUMBER2" sid="995675965147358" static="0" type="number">7</variable>
+        <variable constant="0" name="NUMBER1" sid="547897110249726" static="0" type="number">4</variable>
+        <variable constant="0" name="OPERATION" sid="836114713560095" static="0" type="text">Operation</variable>
+        <event-block sid="426077890743496">
+            <conditions>
+                <condition id="0" name="On function" sid="352649612549681" type="Function">
+                    <param id="0" name="Name">&quot;Create&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="586044795031547" type="System">
+                    <param id="0" name="Variable">OPERATION</param>
+                    <param id="1" name="Value">choose(&quot;+&quot;,&quot;x&quot;,&quot;÷&quot;,&quot;-&quot;)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="193008366214850">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="134220400833859" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;+&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="549026365684282" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="183678446724234" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="117302762824761">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="457596747370250" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;x&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="581065828627563" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="873998903376427" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="790550350904181">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="245847667938789" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;÷&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="102199742916923" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="581073989952270" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="134997826466160">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="485470380750225" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;-&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="264083234167129" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="244512668024801" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

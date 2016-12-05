@@ -3,8 +3,13 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
     <events>
+        <variable constant="0" name="REMAINING_TIME" sid="378386393440650" static="0" type="number">10</variable>
         <variable constant="0" name="Baddy_1_Health" sid="645935831127868" static="0" type="number">2</variable>
         <variable constant="0" name="PlayerHealth" sid="888143544826897" static="0" type="number">10</variable>
+        <variable constant="0" name="RESULT" sid="850653489490232" static="0" type="number">0</variable>
+        <variable constant="0" name="NUMBER2" sid="230190870830112" static="0" type="number">7</variable>
+        <variable constant="0" name="NUMBER1" sid="803053344090897" static="0" type="number">4</variable>
+        <variable constant="0" name="OPERATION" sid="211146784817853" static="0" type="text">Operation</variable>
         <event-block sid="861759285694459">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="225971598297670" type="System" />
@@ -16,6 +21,10 @@
                 <action id="4" name="Set maximum" sid="248817372651851" type="PlayerHealth">
                     <param id="0" name="Maximum">playerBattle.Health</param>
                 </action>
+                <action id="0" name="Call function" sid="850646573018013" type="Function">
+                    <param id="0" name="Name">&quot;Create&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="507668291069013">
@@ -24,12 +33,175 @@
             </conditions>
             <actions>
                 <action id="3" name="Set progress" sid="920368190132663" type="EnemyHealth">
-                    <param id="0" name="Value">baddy.Health</param>
+                    <param id="0" name="Value">Baddy_1_Health</param>
                 </action>
                 <action id="3" name="Set progress" sid="633567359761845" type="PlayerHealth">
-                    <param id="0" name="Value">playerBattle.Health</param>
+                    <param id="0" name="Value">PlayerHealth</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="364975685236734">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="190134038485412" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="711071180300472" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="317986798075867" type="Txt_time">
+                    <param id="0" name="Text">&quot;Time Remaining: &quot;  &amp; REMAINING_TIME</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="782839345387281" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="864913607286998">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="968876364085210" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="272948140450361">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="705121406149798" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="758413365502536" type="System">
+                            <param id="0" name="Variable">PlayerHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="192751740631401">
+            <conditions>
+                <condition id="0" name="On function" sid="413793053071615" type="Function">
+                    <param id="0" name="Name">&quot;Create&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="285441921006160" type="System">
+                    <param id="0" name="Variable">OPERATION</param>
+                    <param id="1" name="Value">choose(&quot;+&quot;,&quot;x&quot;,&quot;÷&quot;,&quot;-&quot;)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="641504342295125">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="912992298690066" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;+&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="282406031428238" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="462787901215937" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="785608355947848" type="System">
+                            <param id="0" name="Variable">RESULT</param>
+                            <param id="1" name="Value">NUMBER1+NUMBER2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="842807973525665">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="843468782745773" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;x&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="589538300153693" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="502934513519807" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="646890350433797" type="System">
+                            <param id="0" name="Variable">RESULT</param>
+                            <param id="1" name="Value">NUMBER1*NUMBER2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="329662049985309">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="943415880617572" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;÷&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="660684858217909" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="719661502732444" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="161421919774720">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="702750655996242" type="System">
+                            <param id="0" name="Variable">OPERATION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;-&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="495582769393226" type="System">
+                            <param id="0" name="Variable">NUMBER1</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="855182382641384" type="System">
+                            <param id="0" name="Variable">NUMBER2</param>
+                            <param id="1" name="Value">floor(random(1,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="724799146190889" type="System">
+                            <param id="0" name="Variable">RESULT</param>
+                            <param id="1" name="Value">NUMBER1-NUMBER2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="655907654308732">
+            <conditions />
+            <actions>
+                <action id="0" name="Set text" sid="197898360446621" type="Question">
+                    <param id="0" name="Text">NUMBER1&amp;&quot; &quot;&amp;OPERATION&amp;&quot; &quot;&amp;NUMBER2&amp;&quot; = ?&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="913733807336155">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="298286758705521" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

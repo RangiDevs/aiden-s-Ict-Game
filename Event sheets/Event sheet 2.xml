@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
     <events>
+        <variable constant="0" name="Answer" sid="467340377335366" static="0" type="number">0</variable>
         <variable constant="0" name="REMAINING_TIME" sid="378386393440650" static="0" type="number">10</variable>
         <variable constant="0" name="Baddy_1_Health" sid="645935831127868" static="0" type="number">2</variable>
         <variable constant="0" name="PlayerHealth" sid="888143544826897" static="0" type="number">10</variable>
@@ -69,7 +70,16 @@
                     <param id="2" name="Value">-1</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-9" name="Set value" sid="161205522492259" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Call function" sid="675270683273448" type="Function">
+                    <param id="0" name="Name">&quot;Create&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="272948140450361">
                     <conditions>
@@ -152,13 +162,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="660684858217909" type="System">
+                        <action id="-9" name="Set value" sid="639056222784073" type="System">
                             <param id="0" name="Variable">NUMBER1</param>
-                            <param id="1" name="Value">floor(random(1,20))</param>
+                            <param id="1" name="Value">floor(random(3,10))</param>
                         </action>
-                        <action id="-9" name="Set value" sid="719661502732444" type="System">
+                        <action id="-9" name="Set value" sid="689369922309159" type="System">
                             <param id="0" name="Variable">NUMBER2</param>
-                            <param id="1" name="Value">floor(random(1,20))</param>
+                            <param id="1" name="Value">NUMBER1*floor(floor(random(1,10)))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="832538385293974" type="System">
+                            <param id="0" name="Variable">RESULT</param>
+                            <param id="1" name="Value">NUMBER1/NUMBER2</param>
                         </action>
                     </actions>
                 </event-block>
@@ -202,6 +216,64 @@
                 </condition>
             </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="895772286099747">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="908527723296164" type="System">
+                            <param id="0" name="Variable">REMAINING_TIME</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="252190433174853" type="System">
+                            <param id="0" name="Variable">Answer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">RESULT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="311093331561685" type="System">
+                            <param id="0" name="Variable">Baddy_1_Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="968723063876409" type="Function">
+                            <param id="0" name="Name">&quot;Create&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="900791311807166" type="System">
+                            <param id="0" name="Variable">REMAINING_TIME</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="682407604286213">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="280615242357985" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="214189681062140" type="System">
+                            <param id="0" name="Variable">PlayerHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="248652478852751" type="Function">
+                            <param id="0" name="Name">&quot;Create&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="580860214978247" type="System">
+                            <param id="0" name="Variable">REMAINING_TIME</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="835356002539614">
+            <conditions />
+            <actions>
+                <action id="-9" name="Set value" sid="351381865588569" type="System">
+                    <param id="0" name="Variable">Answer</param>
+                    <param id="1" name="Value">Answer.Text</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

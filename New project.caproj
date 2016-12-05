@@ -213,9 +213,12 @@
         </object-type>
         <object-type name="Txt_time" sid="315522932700547">
             <plugin id="Text" />
+<<<<<<< HEAD
         </object-type>
         <object-type name="Question" sid="867741088762359">
             <plugin id="Text" />
+=======
+>>>>>>> origin/master
         </object-type>
     </object-folder>
     <families />

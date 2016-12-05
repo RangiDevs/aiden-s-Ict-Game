@@ -3,8 +3,12 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 2</name>
     <events>
+<<<<<<< HEAD
         <variable constant="0" name="Answer" sid="467340377335366" static="0" type="number">0</variable>
         <variable constant="0" name="REMAINING_TIME" sid="378386393440650" static="0" type="number">10</variable>
+=======
+        <variable constant="0" name="REMAINING_TIME" sid="378386393440650" static="0" type="number">5</variable>
+>>>>>>> origin/master
         <variable constant="0" name="Baddy_1_Health" sid="645935831127868" static="0" type="number">2</variable>
         <variable constant="0" name="PlayerHealth" sid="888143544826897" static="0" type="number">10</variable>
         <variable constant="0" name="RESULT" sid="850653489490232" static="0" type="number">0</variable>
@@ -38,6 +42,7 @@
                 </action>
                 <action id="3" name="Set progress" sid="633567359761845" type="PlayerHealth">
                     <param id="0" name="Value">PlayerHealth</param>
+<<<<<<< HEAD
                 </action>
             </actions>
         </event-block>
@@ -272,8 +277,65 @@
                 <action id="-9" name="Set value" sid="351381865588569" type="System">
                     <param id="0" name="Variable">Answer</param>
                     <param id="1" name="Value">Answer.Text</param>
+=======
+>>>>>>> origin/master
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="278657458641347">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="132067459583066" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="850646573018013" type="Function">
+                    <param id="0" name="Name">&quot;Create&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="364975685236734">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="190134038485412" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="711071180300472" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="317986798075867" type="Txt_time">
+                    <param id="0" name="Text">&quot;Time Remaining &quot;  &amp; REMAINING_TIME</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="782839345387281" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="864913607286998">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="968876364085210" type="System">
+                    <param id="0" name="Variable">REMAINING_TIME</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="272948140450361">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="705121406149798" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="758413365502536" type="System">
+                            <param id="0" name="Variable">PlayerHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
